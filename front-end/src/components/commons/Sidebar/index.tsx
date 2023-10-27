@@ -28,6 +28,7 @@ const Sidebar: React.FC = () => {
 			window.removeEventListener("mousemove", handleMouseMove);
 		};
 	}, []);
+
 	const changeMenuBarPosition = () => {
 		if (
 			mousePosition.y + 100 < window.innerHeight &&
@@ -35,14 +36,17 @@ const Sidebar: React.FC = () => {
 		) {
 			animate(
 				"#menu-bar",
-				{ top: mousePosition.y },
+				{ 
+					top: mousePosition.y,
+					
+				},
 				{ delay: 0, duration: 0 }
 			);
 		}
 	};
 
 	const handleMouseEnter = () => {
-		animate("#menu-bar", { right: "20px", opacity: 1 });
+		animate("#menu-bar", { right: 30, opacity: 1 });
 		animate(
 			"#wave",
 			{ right: -800, opacity: 1 },
@@ -51,7 +55,7 @@ const Sidebar: React.FC = () => {
 	};
 
 	const handleMouseLeave = () => {
-		animate("#menu-bar", { right: "-30px", opacity: 0 });
+		animate("#menu-bar", { right: -30, opacity: 0 });
 		animate(
 			"#wave",
 			{ right: -1200, opacity: 0 },
@@ -94,7 +98,7 @@ const Sidebar: React.FC = () => {
 					<FontAwesomeIcon
 						id="menu-bar"
 						onClick={handleSidebarToggle}
-						className="h-[30px] -right-[100px] -translate-y-1/2 absolute md:block hidden text-red-900 fill-red-600 "
+						className="h-[30px] -right-[100px] -translate-y-1/2 absolute md:block hidden text-white fill-white "
 						icon={faBars}
 					/>
 					<FontAwesomeIcon
@@ -105,7 +109,7 @@ const Sidebar: React.FC = () => {
 				</section>
 				<section
 					id="sidebar"
-					className="fixed bg-[#023047] w-[400px] h-[100dvh] right-0 translate-x-full top-0 z-10"
+					className="fixed bg-black w-[400px] h-[100dvh] right-0 translate-x-full top-0 z-10"
 				>
 					<FontAwesomeIcon
 						id="close"

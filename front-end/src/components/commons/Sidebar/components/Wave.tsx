@@ -1,9 +1,9 @@
-type Props = {
-    y: number
-}
+// type Props = {
+//     y: number
+// }
 
-const Wave: React.FC<Props> = ({y}) => {
-    return (  );
-}
+// const Wave: React.FC<Props> = ({y}) => {
+//     return (  );
+// }
  
-export default Wave;
+// export default Wave;

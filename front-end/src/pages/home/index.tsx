@@ -1,10 +1,8 @@
+import Home from "../../components/Home";
+
+
 function HomePage() {
-  return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <div className=""></div>
-    </>
-  );
+	return <Home />
 }
 
 export default HomePage;
