@@ -176,7 +176,7 @@ function NavigationMain() {
   return (
     <nav
       ref={boxRef}
-      className="w-[80px] h-[80px] fixed bottom-[40px] right-1/2 translate-x-1/2 flex justify-center items-center"
+      className="w-[80px] h-[80px] fixed bottom-[40px] right-1/2 translate-x-1/2 flex justify-center items-center z-50"
     >
       <div
         className="w-[50px] h-[50px] bg-blue-900 rounded-[50%]  bottom-1 cursor-pointer flex justify-center"
