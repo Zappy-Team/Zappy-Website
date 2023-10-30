@@ -7,6 +7,7 @@ const SwipingText: React.FC = () => {
 	const WordElements = words.map((word, idx) => {
 		return (
 			<motion.span
+				key={idx}
 				initial={{ top: -80 }}
 				animate={{
 					top: [null, 0, 100],
