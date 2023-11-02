@@ -2,6 +2,11 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { useAnimate } from "framer-motion";
+import {
+	faFacebookSquare,
+	faInstagramSquare,
+	faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 
 type mousePositionState = {
 	x: number;
@@ -36,9 +41,8 @@ const Sidebar: React.FC = () => {
 		) {
 			animate(
 				"#menu-bar",
-				{ 
+				{
 					top: mousePosition.y,
-					
 				},
 				{ delay: 0, duration: 0 }
 			);
@@ -50,8 +54,8 @@ const Sidebar: React.FC = () => {
 		animate(
 			"#wave",
 			{ right: -800, opacity: 1 },
-			{ duration: .5, ease: "easeIn" }
-		)
+			{ duration: 0.5, ease: "easeIn" }
+		);
 	};
 
 	const handleMouseLeave = () => {
@@ -69,7 +73,7 @@ const Sidebar: React.FC = () => {
 	};
 	const sidebarAnimation = () => {
 		if (!sidebarToggled) {
-			animate("#sidebar", { right: "300px" }).then(() => {
+			animate("#sidebar", { right: "400px" }).then(() => {
 				animate(
 					"#close",
 					{ opacity: 1, left: "-50px" },
@@ -109,7 +113,7 @@ const Sidebar: React.FC = () => {
 				</section>
 				<section
 					id="sidebar"
-					className="fixed bg-black w-[400px] h-[100dvh] right-0 translate-x-full top-0 z-10"
+					className="fixed bg-black w-[400px] h-[100dvh] right-0 translate-x-full top-0 z-10  "
 				>
 					<FontAwesomeIcon
 						id="close"
@@ -117,6 +121,39 @@ const Sidebar: React.FC = () => {
 						icon={faX}
 						onClick={handleSidebarToggle}
 					/>
+					<nav className="text-white flex w-full">
+						<ul className="w-full flex flex-col items-center text-3xl">
+							<li>
+								<a href="#">Events</a>
+							</li>
+							<li>
+								<a href="#">Blogs</a>
+							</li>
+							<li>
+								<a href="#">Career</a>
+							</li>
+							<article>
+								<a href="#">
+									<FontAwesomeIcon
+										className=" text-white h-[30px]"
+										icon={faFacebookSquare}
+									/>
+								</a>
+								<a href="#">
+									<FontAwesomeIcon
+										className=" text-white h-[30px]"
+										icon={faInstagramSquare}
+									/>
+								</a>
+								<a href="#">
+									<FontAwesomeIcon
+										className=" text-white h-[30px]"
+										icon={faLinkedin}
+									/>
+								</a>
+							</article>
+						</ul>
+					</nav>
 				</section>
 			</aside>
 		</>
