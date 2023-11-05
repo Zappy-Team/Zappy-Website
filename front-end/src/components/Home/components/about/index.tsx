@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import ContainerCo from "../../../containers/co";
 import SectionTitle from "../../../sectionTitle";
 import HomeAboutZappy from "./zappy";
@@ -7,6 +7,24 @@ import { ScrollTrigger } from "gsap/all";
 
 const HomeAbout = () => {
   const boxRef = useRef<HTMLHeadingElement | null>(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    // Update dimensions when the component mounts
+    setWindowWidth(window.innerWidth);
+
+    // Update dimensions when the window is resized
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -30,7 +48,10 @@ const HomeAbout = () => {
           toggleActions: "restart pause complete reverse",
         },
       });
-      aboutZappyBg.to(".about_zappy_bg ", { width: "50%", opacity: 1 });
+      aboutZappyBg.to(".about_zappy_bg ", {
+        width: `${windowWidth < 640 ? "100%" : "50%"}`,
+        opacity: 1,
+      });
       aboutZappyBg.to(
         ".about_zappy_image ",
         { width: "100%", opacity: 1 },
@@ -55,7 +76,7 @@ const HomeAbout = () => {
       });
       aboutZappySlide.to(".about_zappy_slide_bg", {
         opacity: 1,
-        width: "50%",
+        width: `${windowWidth < 640 ? "100%" : "50%"}`,
         height: "600px",
         borderRadius: 0,
       });
