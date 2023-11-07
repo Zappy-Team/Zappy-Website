@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import ContainerServices from "../../../containers/services";
 
-const data = [
+const serviceData = [
   {
     id: 1,
     title: "Web",
@@ -63,7 +63,7 @@ function HomeServices() {
 
       {/* Services */}
       <section className="services_ flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-2 gap-1 w-[90%] mt-20 mx-auto [&>*:nth-child(2)]:translate-x-full">
-        {data.map((data, index) => (
+        {serviceData.map((data, index) => (
           <ContainerServices
             key={data.id}
             style={`lg:col-span-${index === 2 ? "2" : "1"} service_${

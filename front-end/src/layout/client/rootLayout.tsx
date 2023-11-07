@@ -4,6 +4,7 @@ import { ScrollRestoration } from "react-router-dom";
 // import NavigationMain from "../../components/navigation/main";
 import Sidebar from "../../components/commons/Sidebar";
 import Header from "../../components/commons/Header";
+import Footer from "../../components/footer";
 
 const RootLayout: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const RootLayout: React.FC = () => {
       <Sidebar />
       <Header />
       <Outlet />
+      <Footer />
       <ScrollRestoration />
     </>
   );
