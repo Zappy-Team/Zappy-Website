@@ -4,6 +4,7 @@ import {
   //  useLayoutEffect,
   useRef,
 } from "react";
+import HackerTitle from "../../../components/commons/HackerTItle";
 
 function AboutHero() {
   const boxRef = useRef<HTMLHeadingElement | null>(null);
@@ -27,15 +28,7 @@ function AboutHero() {
       ref={boxRef}
       className="min-h-screen flex flex-col px-4 md:w-[90%] md:mx-auto"
     >
-      <h1 className=" text-5xl text-center mt-24 md:text-7xl xl:text-8xl md:text-left">
-        <span className="" id="rocket_one">
-          🚀
-        </span>{" "}
-        We Are Zappy{" "}
-        <span className="" id="rocket_two">
-          🚀
-        </span>
-      </h1>
+      <HackerTitle text="WE ARE ZAPPY" intervalTime={40} />
       <p className=" text-2xl mt-24 md:3xl md:self-end md:max-w-lg">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam facere
         quam itaque dicta assumenda laudantium, accusantium ex repudiandae

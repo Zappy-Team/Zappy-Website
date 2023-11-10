@@ -30,13 +30,13 @@ const ListChooseComponent: React.FC<PropTypes> = ({
         className="absolute w-full h-full cursor-pointer opacity-0"
       />
       {/* Round */}
-      {checked && (
-        <div
-          className={`${
-            bg ? "bg-blue-300" : "bg-blue-950"
-          } duration-500  absolute w-8 h-8 rounded-full -left-[16px] md:w-10 md:h-10 md:-left-[20px]`}
-        />
-      )}
+      <div
+        className={`${bg ? "bg-blue-300" : "bg-blue-950"} ${
+          checked
+            ? "opacity-1 -left-[16px] md:-left-[20px]"
+            : "opacity-0 left-[120px]"
+        } duration-500  absolute w-8 h-8 rounded-full  md:w-10 md:h-10 `}
+      />
     </li>
   );
 };
