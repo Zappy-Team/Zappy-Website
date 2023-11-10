@@ -2,11 +2,8 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { useAnimate } from "framer-motion";
-import {
-	faFacebookSquare,
-	faInstagramSquare,
-	faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import Navigation from "./components/Navigation";
+import CloseNavigation from "./components/Navigation/components/CloseNavigation";
 
 type mousePositionState = {
 	x: number;
@@ -73,87 +70,45 @@ const Sidebar: React.FC = () => {
 	};
 	const sidebarAnimation = () => {
 		if (!sidebarToggled) {
-			animate("#sidebar", { right: "400px" }).then(() => {
-				animate(
-					"#close",
-					{ opacity: 1, left: "-50px" },
-					{ delay: 0.5 }
-				);
-			});
+			animate("#sidebar", { right: "100vw" }, {duration: .5, ease: "easeInOut"});
 		} else {
-			animate("#close", { opacity: 0, left: "120px" }).then(() => {
-				animate("#sidebar", { right: "-100px" });
-			});
+			animate("#sidebar", { right: "-100vw" }, {duration: .5, ease: "easeInOut"});
 		}
 	};
 	return (
 		<>
-			<aside ref={scope} className="overflow-y-hidden">
+			<aside ref={scope} className="overflow-y-hidden overflow-x-hidden ">
 				<div
 					id="wave"
-					className=" overflow-y-hidden opacity-0 fixed -right-[1200px] h-[1000px] top-1/2 -translate-y-1/2 w-[1000px] rounded-full bg-black "
+					className=" md:block hidden overflow-y-hidden opacity-0 fixed -right-[1200px] h-[130vh] top-1/2 -translate-y-1/2 w-[1000px] rounded-full bg-black z-[1000]"
 				></div>
 				<section
 					onMouseEnter={handleMouseEnter}
 					onMouseLeave={handleMouseLeave}
 					onMouseMove={changeMenuBarPosition}
-					className="md:w-[50px] md:h-[100dvh] fixed right-0 "
+					className="md:w-[50px] md:h-[100dvh] fixed z-[1000] right-0"
 				>
 					<FontAwesomeIcon
 						id="menu-bar"
 						onClick={handleSidebarToggle}
-						className="h-[30px] -right-[100px] -translate-y-1/2 absolute md:block hidden text-white fill-white "
+						className="h-[30px] -right-[100px] -translate-y-1/2 z-[10001] absolute md:block hidden text-white fill-white "
 						icon={faBars}
 					/>
 					<FontAwesomeIcon
 						onClick={handleSidebarToggle}
-						className="absolute h-[30px] top-[10px] right-[10px] md:hidden block "
+						className="absolute h-[30px] top-[10px] right-[10px] z-[10001] md:hidden block "
 						icon={faBars}
 					/>
 				</section>
 				<section
 					id="sidebar"
-					className="fixed bg-black w-[400px] h-[100dvh] right-0 translate-x-full top-0 z-10  "
+					className="fixed bg-black w-[100vw] h-[100dvh] right-0 translate-x-full top-0 z-[10000] "
 				>
-					<FontAwesomeIcon
-						id="close"
-						className="absolute opacity-0 top-1/2 -translate-y-1/2 h-[50px] -z-20"
-						icon={faX}
-						onClick={handleSidebarToggle}
-					/>
-					<nav className="text-white flex w-full">
-						<ul className="w-full flex flex-col items-center text-3xl">
-							<li>
-								<a href="#">Events</a>
-							</li>
-							<li>
-								<a href="#">Blogs</a>
-							</li>
-							<li>
-								<a href="#">Career</a>
-							</li>
-							<article>
-								<a href="#">
-									<FontAwesomeIcon
-										className=" text-white h-[30px]"
-										icon={faFacebookSquare}
-									/>
-								</a>
-								<a href="#">
-									<FontAwesomeIcon
-										className=" text-white h-[30px]"
-										icon={faInstagramSquare}
-									/>
-								</a>
-								<a href="#">
-									<FontAwesomeIcon
-										className=" text-white h-[30px]"
-										icon={faLinkedin}
-									/>
-								</a>
-							</article>
-						</ul>
-					</nav>
+					<div className="w-full  md:w-[60%] h-full flex flex-col items-center md:items-start md:flex-row md:justify-between pl-16 gap-y-10 mt-20">
+						<h2 className="text-4xl text-white">Zappy</h2>
+						<Navigation />
+						<CloseNavigation handleToggle={handleSidebarToggle} />
+					</div>
 				</section>
 			</aside>
 		</>

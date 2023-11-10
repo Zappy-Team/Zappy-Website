@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+
 type Props = {
   text: string;
   intervalTime?: number;
@@ -6,6 +7,7 @@ type Props = {
 const HackerTitle: React.FC<Props> = ({ text, intervalTime }) => {
   const textRef = useRef<null | HTMLHeadingElement>(null);
   const letters = "ABCDEFGHIGKLMOPQRSTUVWXYZ4";
+
   useEffect(() => {
     let iterations = 0;
     if (textRef && textRef.current) {
