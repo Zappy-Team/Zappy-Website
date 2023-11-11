@@ -1,0 +1,22 @@
+{
+	"home": {
+		"hero": {
+			"header": "ჩვენ ვართ",
+			"headerVariants": ["ინოვაციური", "კრეატიული"]
+		},
+		"about": {
+			"header": "ვინ ვართ ჩვენ",
+			"content": "რათა გავაძლიეროთ ბიზნესები და ინდივიდუალები ჩვენი ინოვაციური ტექნოლოგიური მიდგომებით, გავაუმჯობესოთ ეფექტურობა."
+		}
+	},
+	"about": {
+		"company": {
+			"header": "ჩვენ ვართ Zappy",
+			"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam facere quam itaque dicta assumenda laudantium, accusantium ex repudiandae commodi sunt, ea quidem incidunt voluptatum labore, suscipit ipsum? Eos quos tempore inventore at labore dolore dolor ratione id odio unde neque numquam autem facilis nulla blanditiis enim quaerat obcaecati, eum debitis?"
+		},
+		"team": {
+			"header": "გუნდი",
+			"description": "As we look ahead to the future, our startup team, led by co-founders Sarah and David, envisions growth and expansion. We're not just a duo anymore, but a dynamic team with an ever-growing family of employees who share our endless curiosity, creative inspiration, and strategic mindset. Together, we speak many languages, both in code and in culture, yet we all unite under the common banner of hustle and passion, shaping the future of our venture with dedication, teamwork, and a collective drive to make a difference."
+		}
+	}
+}
