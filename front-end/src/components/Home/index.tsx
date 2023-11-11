@@ -2,7 +2,6 @@ import Canvas from "./components/Canvas";
 import SwipingText from "./components/SwipingText";
 import HomeAbout from "./components/about";
 import HomeFeatureProject from "./components/project";
-import HomeSubscribe from "./components/subscribe/index.";
 import HomeServices from "./components/services";
 
 const Home = () => {

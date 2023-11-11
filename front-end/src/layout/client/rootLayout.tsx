@@ -4,16 +4,12 @@ import { ScrollRestoration } from "react-router-dom";
 // import NavigationMain from "../../components/navigation/main";
 import Sidebar from "../../components/commons/Sidebar";
 import Header from "../../components/commons/Header";
-<<<<<<< Updated upstream
-=======
-import Footer from "../../components/footer";
 import global_en from "../../translations/en/global.json";
 import global_ge from "../../translations/ge/global.json";
 import { initReactI18next } from "react-i18next/initReactI18next";
 import { I18nextProvider } from "react-i18next";
 import ii18next from "i18next";
->>>>>>> Stashed changes
-
+import Footer from "../../components/footer";
 const resources = {
 	en: {
 		translation: {
@@ -33,17 +29,6 @@ ii18next.use(initReactI18next).init({
 	lng: "ge",
 });
 const RootLayout: React.FC = () => {
-<<<<<<< Updated upstream
-  return (
-    <>
-      {/* <NavigationMain /> */}
-      <Sidebar />
-      <Header />
-      <Outlet />
-      <ScrollRestoration />
-    </>
-  );
-=======
 	return (
 		<I18nextProvider i18n={ii18next}>
 			{/* <NavigationMain /> */}
@@ -54,7 +39,6 @@ const RootLayout: React.FC = () => {
 			<ScrollRestoration />
 		</I18nextProvider>
 	);
->>>>>>> Stashed changes
 };
 
 export default RootLayout;

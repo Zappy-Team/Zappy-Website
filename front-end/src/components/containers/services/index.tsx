@@ -15,7 +15,7 @@ const ContainerServices: React.FC<PropTypes> = ({ data, style }) => {
       <h2 className="text-center text-xl py-2">{data.title}</h2>
       <hr className="md:w-[70%] md:mx-auto" />
       <aside>
-        <p className="text-right text-base tracking-wide	">{data.description}</p>
+        <p className="text-right text-base tracking-wide">{data.description}</p>
       </aside>
     </div>
   );

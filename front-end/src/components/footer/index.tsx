@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Link } from "react-router-dom";
 
-function HomeSubscribe() {
+function Footer() {
   const boxRef = useRef<HTMLHeadingElement | null>(null);
   const [hovered, setHovered] = useState<boolean>(false);
   const [focused, setFocused] = useState<boolean>(false);
@@ -70,4 +70,4 @@ function HomeSubscribe() {
   );
 }
 
-export default HomeSubscribe;
+export default Footer;
