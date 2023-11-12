@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useTranslation } from "react-i18next";
 const HomeAbout = () => {
-    const [t] = useTranslation();
+	const [t] = useTranslation();
 	const boxRef = useRef<HTMLHeadingElement | null>(null);
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -81,7 +81,7 @@ const HomeAbout = () => {
 			});
 			aboutZappySlide.to(".about_zappy_slide_bg", {
 				opacity: 1,
-				width: `${windowWidth < 640 ? "100%" : "50%"}`,
+				width: `${windowWidth < 668 ? "100%" : "50%"}`,
 				height: "600px",
 				borderRadius: 0,
 			});
@@ -118,9 +118,12 @@ const HomeAbout = () => {
 		return () => ctx.revert();
 	}, []);
 	return (
-		<section ref={boxRef} className="w-full min-h-screen bg-blue-950 pb-40">
+		<section ref={boxRef} className="w-full min-h-screen bg-black  pb-40">
 			{/* Title */}
-			<SectionTitle title={t("global.home.about.header")} />
+			<SectionTitle
+				styles="text-black bg-white border-none rounded-[6px]"
+				title={t("global.home.about.header")}
+			/>
 			{/* We Are Zappy */}
 			<HomeAboutZappy />
 

@@ -37,8 +37,8 @@ function HomeFeatureProject() {
   }, []);
 
   return (
-    <section ref={boxRef} className="w-full min-h-screen bg-green-950 pb-40">
-      <SectionTitle title="Feature Project" />
+    <section ref={boxRef} className="w-full bg-black ">
+      <SectionTitle title="Feature Project" styles="text-black bg-white rounded-[6px] border-none" />
 
       {/* Project */}
       <HomeProjectSection />
