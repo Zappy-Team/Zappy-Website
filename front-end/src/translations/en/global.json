@@ -18,5 +18,30 @@
 			"header": "Team",
 			"description": "As we look ahead to the future, our startup team, led by co-founders Sarah and David, envisions growth and expansion. We're not just a duo anymore, but a dynamic team with an ever-growing family of employees who share our endless curiosity, creative inspiration, and strategic mindset. Together, we speak many languages, both in code and in culture, yet we all unite under the common banner of hustle and passion, shaping the future of our venture with dedication, teamwork, and a collective drive to make a difference."
 		}
+	},
+	"contact": {
+		"header": "Contact Us",
+		"fields": {
+			"labels": {
+				"name": "Enter Your Name",
+				"email": "Enter Your Email",
+				"subject": "Enter Your Subject",
+				"content": "Enter Your Content"
+			},
+			"placeholders": {
+				"name": "Name",
+				"subject": "Subject",
+				"content": "Content"
+			},
+			"errors": {
+				"name": "Name is required",
+				"email": {
+					"required": "Email is required",
+					"validation": "Invalid email"
+				},
+				"subject": "Subject is required",
+				"content": "Content is required"
+			}
+		}
 	}
 }
