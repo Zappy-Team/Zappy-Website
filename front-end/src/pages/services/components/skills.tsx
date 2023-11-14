@@ -8,7 +8,7 @@ import nextImg from "../../../assets/skills/next.png";
 import reactImg from "../../../assets/skills/react.png";
 import reactNativeImg from "../../../assets/skills/reactNative.webp";
 import SkillsContainer from "../../../components/containers/services/skills";
-import useServiceBgStore from "../../../store/services/serviceWay";
+import useHomeBgStore from "../../../store/home/bg";
 
 const skillsData = [
   {
@@ -59,10 +59,12 @@ const skillsData = [
 ];
 
 function ServiceSkills() {
-  const { serviceBg } = useServiceBgStore((state) => state);
+  const { bgColor } = useHomeBgStore((state) => state);
 
   return (
-    <section className={`${serviceBg ? "bg-black" : "bg-white"} duration-500`}>
+    <section
+      className={`${bgColor ? "bg-black" : "bg-white"} duration-500 pt-72`}
+    >
       <div className="grid mx-auto w-[90%] grid-cols-2 md:grid-cols-3 gap-3 max-w-[1300px] md:w-[80%]">
         {skillsData.map((data) => (
           <SkillsContainer key={data.id} url={data.url} name={data.name} />

@@ -1,0 +1,25 @@
+#tap_ {
+  animation: tapAnimation 2s infinite linear;
+}
+
+#tap_::after {
+  animation: tapAfterAnimation 2s infinite linear;
+}
+
+@keyframes tapAfterAnimation {
+  50% {
+    bottom: -10px;
+  }
+  100% {
+    bottom: -8px;
+  }
+}
+
+@keyframes tapAnimation {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

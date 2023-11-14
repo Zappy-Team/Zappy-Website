@@ -3,7 +3,7 @@ import ListChooseComponent from "../../../components/lists/list";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import useServiceBgStore from "../../../store/services/serviceWay";
+import useHomeBgStore from "../../../store/home/bg";
 
 const listData = [
   {
@@ -25,7 +25,7 @@ function ServiceWay() {
   const boxRef = useRef<HTMLHeadingElement | null>(null);
 
   /* States */
-  const { serviceBg, setServiceBg } = useServiceBgStore((state) => state);
+  const { setBgColor, bgColor } = useHomeBgStore((state) => state);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -38,7 +38,7 @@ function ServiceWay() {
           end: "bottom 100px",
           toggleActions: "restart pause complete reverse",
           onUpdate: ({ isActive }) => {
-            setServiceBg(isActive);
+            setBgColor(isActive);
           },
         },
       });
@@ -49,7 +49,7 @@ function ServiceWay() {
   return (
     <section
       className={`${
-        serviceBg ? "bg-black" : "bg-white"
+        bgColor ? "bg-black" : "bg-white"
       } _service_way_ flex flex-col min-h-screen py-10 pt-12 relative duration-500`}
       ref={boxRef}
     >
@@ -59,7 +59,7 @@ function ServiceWay() {
       <header className="service_way_header mx-auto">
         <h2
           className={`${
-            serviceBg ? "text-white" : "text-black"
+            bgColor ? "text-white" : "text-black"
           } duration-500 text-4xl text-center font-bold`}
         >
           Three ways you can work with us
@@ -74,7 +74,7 @@ function ServiceWay() {
             name={data.name}
             changeFn={(e) => setListChecked(e)}
             checked={data.name === listChecked ? true : false}
-            bg={serviceBg}
+            bg={bgColor}
           />
         ))}
       </ul>
@@ -84,7 +84,7 @@ function ServiceWay() {
         {listChecked === "Ongoing Support" && (
           <p
             className={`${
-              serviceBg ? "text-white" : "text-black"
+              bgColor ? "text-white" : "text-black"
             } duration-500 max-w-[400px] mx-auto tracking-wider text-center px-7 pb-7 text-xl`}
           >
             A business&#44;s evolution is never complete. For this reason, most
@@ -94,7 +94,7 @@ function ServiceWay() {
         {listChecked === "Project-Based" && (
           <p
             className={`${
-              serviceBg ? "text-white" : "text-black"
+              bgColor ? "text-white" : "text-black"
             } duration-500 max-w-[400px] mx-auto tracking-wider text-center px-7 pb-7 text-xl`}
           >
             When the tasks at hand are short-term and the services required are
@@ -105,7 +105,7 @@ function ServiceWay() {
         {listChecked === "Consulting" && (
           <p
             className={`${
-              serviceBg ? "text-white" : "text-black"
+              bgColor ? "text-white" : "text-black"
             } duration-500 max-w-[400px] mx-auto tracking-wider text-center px-7 pb-7 text-xl`}
           >
             Whether clients require a one-time consultation or ongoing strategic

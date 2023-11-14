@@ -4,14 +4,11 @@ type Props = {
   text: string;
   intervalTime?: number;
 };
-const HackerTitle: React.FC<Props> = ({ text, intervalTime }) => {
+const HackerZappy: React.FC<Props> = ({ text, intervalTime }) => {
   const textRef = useRef<null | HTMLHeadingElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_t, i18n] = useTranslation();
-  const letters =
-    i18n.language == "en"
-      ? "ABCDEFGHIGKLMOPQRSTUVWXYZ"
-      : "აბგდევზთიკლმნოპჟრსტუფქღყშჩწხჯჰ";
+  const letters = "ABCDEFGHIGKLMOPQRSTUVWXYZ";
   useEffect(() => {
     let iterations = 0;
     if (textRef && textRef.current) {
@@ -58,14 +55,7 @@ const HackerTitle: React.FC<Props> = ({ text, intervalTime }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [textRef]);
-  return (
-    <h1
-      ref={textRef}
-      className="text-5xl text-center mt-24 md:text-7xl xl:text-8xl md:text-left"
-    >
-      {text}
-    </h1>
-  );
+  return <div ref={textRef}>{text}</div>;
 };
 
-export default HackerTitle;
+export default HackerZappy;
