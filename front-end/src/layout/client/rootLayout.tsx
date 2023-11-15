@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import { ScrollRestoration } from "react-router-dom";
 import Sidebar from "../../components/commons/Sidebar";
 import Header from "../../components/commons/Header";
-import global_en from "../../translations/en/global";
+import global_en from "../../translations/en/global.json";
 import global_ge from "../../translations/ge/global.json";
 import { initReactI18next } from "react-i18next/initReactI18next";
 import { I18nextProvider } from "react-i18next";
