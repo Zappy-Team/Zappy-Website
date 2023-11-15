@@ -32,7 +32,7 @@ function AboutHero() {
 			<HackerTitle text={t("global.about.company.header")} />
 
 			<p className=" text-2xl mt-24 md:3xl md:self-end md:max-w-lg">
-				{t("global.about.team.description")}
+				{t("global.about.about_us.description")}
 			</p>
 		</main>
 	);

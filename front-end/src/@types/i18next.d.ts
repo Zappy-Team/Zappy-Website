@@ -1,6 +1,6 @@
 import "i18next";
 
-import global_en from "../translations/en/global.json";
+import global_en from "../translations/en/global";
 import global_ge from "../translations/ge/global.json";
 
 declare module "i18next" {

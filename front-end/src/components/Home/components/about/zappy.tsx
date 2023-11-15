@@ -22,8 +22,11 @@ const HomeAboutZappy = () => {
 			<div className="about_zappy_vision md:w-fit md:min-w-[250px] md:max-w-[30%] flex flex-col md:p-6 lg:p-12 p-2 gap-10 w-full md: opacity-0">
 				{/* Line */}
 				<div className="about_zappy_line md:w-1/4 w-1/6 h-[3px] bg-white md:translate-x-1/2" />
-				<p className="about_zappy_txt tracking-widest md:translate-x-1/2">
-					{t("global.home.about.content")}
+				<p className="about_zappy_txt tracking-wider md:translate-x-1/2">
+					{t("global.home.about.main_content")}
+				</p>
+				<p className="about_zappy_txt tracking-wider md:translate-x-1/2">
+					{t("global.home.about.general_content")}
 				</p>
 			</div>
 		</div>
