@@ -13,10 +13,10 @@ const Navigation:React.FC<{enable: boolean}> = ({enable}) => {
       <RemoveScroll enabled={enable}>
         <ul className="w-full flex gap-y-10 flex-col items-center text-6xl">
           <li>
-            <NavLink to="#">Events</NavLink>
+            <NavLink to="/events">Events</NavLink>
           </li>
           <li>
-            <NavLink to="#">Blogs</NavLink>
+            <NavLink to="/blogs">Blogs</NavLink>
           </li>
           <li>
             <NavLink to="#">Career</NavLink>

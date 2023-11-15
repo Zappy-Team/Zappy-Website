@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import TeamImage from "../../../../assets/team/Team.jpg"
 const HomeAboutZappy = () => {
 	const [t] = useTranslation();
 	return (
@@ -8,7 +9,7 @@ const HomeAboutZappy = () => {
 				{/* md:w-1/2 */}
 				{/* Image */}
 				<img
-					src="https://bowen-assets.nyc3.cdn.digitaloceanspaces.com/company-banner-1200.jpg"
+					src={TeamImage}
 					alt="us"
 					className="about_zappy_image w-0 h-full object-center object-cover md:w-1 opacity-0"
 				/>
