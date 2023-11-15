@@ -65,7 +65,7 @@ const HackerTitle: React.FC<Props> = ({ text, intervalTime }) => {
 			}
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [textRef]);
+	}, []);
 	return (
 		<h1
 			ref={textRef}

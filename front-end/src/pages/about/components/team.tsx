@@ -20,7 +20,7 @@ function OurTeam() {
 			</header>
 
 			{/* Team */}
-			<div className="grid grid-cols-2 w-[90%] mx-auto gap-10 mt-36 md:grid-cols-3 lg:grid-cols-4">
+			<div className="grid grid-cols-1 w-[90%] mx-auto gap-10 mt-36 md:grid-cols-3 lg:grid-cols-4">
 				{teamData.map((data: any) => (
 					<TeamContainer
 						key={data.id}

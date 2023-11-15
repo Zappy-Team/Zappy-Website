@@ -5,31 +5,14 @@ import { ScrollTrigger } from "gsap/all";
 import ContainerServices from "../../../containers/services";
 import useHomeBgStore from "../../../../store/home/bg";
 import BgWhite from "../../../background/white";
-
-const serviceData = [
-	{
-		id: 1,
-		title: "Website Development",
-		description:
-			"თქვენი მოთხოვნის შესაბამისად, შევქმნით ინტერაქციულ, სრულიად ფუნქციურ და გამართულ ვებ ტექნოლოგიებზე დაფუძნებულ პროდუქტს, რაც მორგებული იქნება თქვენი პროექტის უნიკალურ საჭიროებებზე. პროექტზე მუშაობის ყველა ეტაპზე ჩვენთვის პრიორიტეტია უსაფრთხოების ყველა ზომის დაცვა, როგორც მომხმარებლის პერსონალურ მონაცემების მხრივ, ასევე თვითონ პროექტის მონაცემთა ბაზასთან მიმართებაში.",
-	},
-	{
-		id: 2,
-		title: "Mobile Development",
-		description:
-			"ჩვენ ვუზრუნველყოფთ ფუნქციური და გამართული მობილური აპლიკაციების შექმნას, რომელიც ხელმისაწვდომი იქნება როგორც IOS ასევე Android-ის მოწყობილობებისთვის. ჩვენი მიზანია შევქმნათ მომხმარებელზე ორიენტირებული აპლიკაცია, სადაც გათვალისწინებული იქნება თქვენი ყველა მოთხოვნა თუ საჭიროება.",
-	},
-	{
-		id: 3,
-		title: "Continuous improvement",
-		description:
-			"Zappy-ში ჩვენი სერვისები მხოლოდ პროექტების ერთჯერადი განხორციელებით არ შემოიფარგლება. ჩვენ გვესმის, რომ ციფრული სამყარო არის საკმაოდ დინამიური და სწრაფად-ცვალებადი, შესაბამისად ჩვენს კლიენტებს მუდმივად ვთავაზობთ უკვე არსებული პროდუქტების ტექნიკურ მხარდაჭერას, რაც გულისხმობს ხარვეზების შესწორებას (bug fixes), ცვლილებების შეტანასა და ახალი ფუნციონალების დამატებას. ჩვენ ვაკეთებთ ყველაფერს იმისთვის რომ თქვენი პროდუქტი იყოს მაქსიმალურად თანამედროვე და ეფექტური.",
-	},
-];
+import { useTranslation } from "react-i18next";
 
 function HomeServices() {
 	/* States */
 	const { bgColor } = useHomeBgStore((state) => state);
+	const [t] = useTranslation();
+
+	const serviceData = t("global.home.whatWeDo", { returnObjects: true });
 
 	const boxRef = useRef<HTMLHeadingElement | null>(null);
 

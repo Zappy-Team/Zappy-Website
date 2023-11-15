@@ -124,7 +124,7 @@ const Sidebar: React.FC = () => {
 				>
 					<div className="w-full  md:w-[60%] h-full flex flex-col items-center md:items-start md:flex-row md:justify-between pl-16 gap-y-10 mt-20">
 						<h2 className="text-4xl text-white">Zappy</h2>
-						<Navigation enable={sidebarToggled} />
+						<Navigation enable={sidebarToggled} handleSidebarToggle={handleSidebarToggle} />
 						<CloseNavigation handleToggle={handleSidebarToggle} />
 					</div>
 				</section>

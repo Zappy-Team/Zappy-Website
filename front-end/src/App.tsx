@@ -14,17 +14,17 @@ import Events from "./pages/events";
 import Blogs from "./pages/blogs";
 
 const clientRoute = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-      <Route index element={<HomePage />} />
-      <Route path="/services" element={<ServicesPage />} />
-      <Route path="/about-us" element={<AboutPage />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/events" element={<Events />} />
-      <Route path="/blogs" element={<Blogs />} />
-      <Route path="/careers" element={<Careers />} />
-    </Route>
-  )
+	createRoutesFromElements(
+		<Route path="/" element={<RootLayout />}>
+			<Route index element={<HomePage />} />
+			<Route path="/services" element={<ServicesPage />} />
+			<Route path="/about-us" element={<AboutPage />} />
+			<Route path="/contact" element={<Contact />} />
+			<Route path="/events" element={<Events />} />
+			<Route path="/blogs" element={<Blogs />} />
+			<Route path="/careers" element={<Careers />} />
+		</Route>
+	)
 );
 
 function App() {

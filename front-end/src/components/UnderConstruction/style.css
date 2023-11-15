@@ -1,0 +1,13 @@
+#hammer{
+    animation-delay: 500ms;
+    animation: kaku 1000ms  ease-in-out alternate forwards infinite;
+}
+
+@keyframes kaku {
+    0%{
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(10deg);
+    }
+}
