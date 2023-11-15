@@ -64,7 +64,7 @@ const HomeAbout = () => {
         },
       });
       aboutZappyBg.to(".about_zappy_bg ", {
-        width: `${windowWidth < 640 ? "100%" : "50%"}`,
+        width: `${windowWidth < 1024 ? "100%" : "50%"}`,
         opacity: 1,
       });
       aboutZappyBg.to(
@@ -91,7 +91,7 @@ const HomeAbout = () => {
       });
       aboutZappySlide.to(".about_zappy_slide_bg", {
         opacity: 1,
-        width: `${windowWidth < 668 ? "100%" : "50%"}`,
+        width: `${windowWidth < 1024 ? "100%" : "50%"}`,
         height: "600px",
         borderRadius: 0,
       });

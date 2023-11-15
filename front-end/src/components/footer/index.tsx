@@ -21,7 +21,6 @@ function Footer() {
           start: "top 90%",
           end: "bottom 200px",
           toggleActions: "restart pause complete reverse",
-          markers: true,
           onUpdate: ({ isActive }) => {
             setFooterBgColor(isActive);
           },
