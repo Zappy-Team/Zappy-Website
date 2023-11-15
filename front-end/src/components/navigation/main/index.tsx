@@ -11,10 +11,15 @@ import {
   faProjectDiagram,
   faServer,
 } from "@fortawesome/free-solid-svg-icons";
+import useFooterBgColorStore from "../../../store/footer/bg";
+import { Link } from "react-router-dom";
 
 function NavigationMain() {
   /* Store */
-  const { bgColor } = useHomeBgStore((state) => state);
+  const { bgColor, setBgColor } = useHomeBgStore((state) => state);
+  const { footerBgColor, setFooterBgColor } = useFooterBgColorStore(
+    (state) => state
+  );
 
   const [mouseHovered, setMouseHovered] = useState<boolean>(false);
   const [pageHovered, setPageHovered] = useState<string | null>(null);
@@ -215,7 +220,7 @@ function NavigationMain() {
       className="w-[80px] h-[80px] fixed bottom-[40px] right-1/2 translate-x-1/2 flex justify-center items-center z-[300]"
     >
       <div
-        className={`${bgColor ? "bg-white" : "bg-black"} ${
+        className={`${bgColor || footerBgColor ? "bg-white" : "bg-black"} ${
           mouseHovered ? "opacity-100 scale-[1]" : "opacity-50 scale-[0.9]"
         } duration-500 w-[50px] h-[50px] rounded-[50%]  bottom-1 cursor-pointer flex justify-center relative `}
         onMouseEnter={handleMouseEnter}
@@ -260,50 +265,80 @@ function NavigationMain() {
             </div>
           )}
           {/* Pages */}
-          <div
+          <Link
+            to={"/"}
             id="home_"
             className="w-[30px] h-[30px] bg-black rounded-full absolute -top-[70px] -left-[90px] opacity-0 flex items-center justify-center text-white cursor-pointer "
             onMouseEnter={() => setPageHovered("Home")}
             onMouseLeave={() => setPageHovered(null)}
+            onClick={() => {
+              setBgColor(false);
+              setFooterBgColor(false);
+              setPageHovered(null);
+            }}
           >
             <FontAwesomeIcon icon={faHome} />
-          </div>
+          </Link>
 
-          <div
+          <Link
+            to={"/services"}
             id="services_"
             className="w-[30px] h-[30px] bg-black rounded-full absolute -top-[70px] -left-[90px]  opacity-0 flex items-center justify-center text-white cursor-pointer"
             onMouseEnter={() => setPageHovered("Services")}
             onMouseLeave={() => setPageHovered(null)}
+            onClick={() => {
+              setBgColor(false);
+              setFooterBgColor(false);
+              setPageHovered(null);
+            }}
           >
             <FontAwesomeIcon icon={faServer} />
-          </div>
+          </Link>
           {/* -left-[90px] -top-[50px] */}
-          <div
+          <Link
+            to={"/projects"}
             id="projects_"
             className="w-[30px] h-[30px] bg-black text-white rounded-full absolute -top-[70px] -left-[90px]  opacity-0 flex items-center justify-center cursor-pointer"
             onMouseEnter={() => setPageHovered("Projects")}
             onMouseLeave={() => setPageHovered(null)}
+            onClick={() => {
+              setBgColor(false);
+              setFooterBgColor(false);
+              setPageHovered(null);
+            }}
           >
             <FontAwesomeIcon icon={faProjectDiagram} />
-          </div>
+          </Link>
           {/* -left-[90px] -top-[60px] */}
-          <div
+          <Link
+            to={"/about-us"}
             id="about_"
             className="w-[30px] h-[30px] bg-black text-white rounded-full absolute -top-[70px] -left-[90px]  opacity-0 flex items-center justify-center cursor-pointer"
             onMouseEnter={() => setPageHovered("About")}
             onMouseLeave={() => setPageHovered(null)}
+            onClick={() => {
+              setBgColor(false);
+              setFooterBgColor(false);
+              setPageHovered(null);
+            }}
           >
             <FontAwesomeIcon icon={faFaceLaugh} className="-rotate-45" />
-          </div>
+          </Link>
           {/* -top-[60px] -left-[90px] */}
-          <div
+          <Link
+            to={"/contact"}
             id="contact_"
             className="w-[30px] h-[30px] bg-black text-white rounded-full absolute -top-[70px] -left-[90px] opacity-0 flex items-center justify-center cursor-pointer"
             onMouseEnter={() => setPageHovered("Contact")}
             onMouseLeave={() => setPageHovered(null)}
+            onClick={() => {
+              setBgColor(false);
+              setFooterBgColor(false);
+              setMouseHovered(false);
+            }}
           >
             <FontAwesomeIcon className="-rotate-90" icon={faContactBook} />
-          </div>
+          </Link>
         </div>
       </>
       {/* )} */}
