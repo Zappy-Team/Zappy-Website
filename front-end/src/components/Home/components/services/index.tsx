@@ -42,7 +42,7 @@ function HomeServices() {
           },
         });
         serviceTitle.to(".service_1 ", { xPercent: 100, opacity: 1 }, "same");
-        serviceTitle.to(".service_2 ", { xPercent: -100, opacity: 1 }, "same");
+        serviceTitle.to(".service_2 ", { xPercent: 0, opacity: 1 }, "same");
         serviceTitle.to(".service_3 ", { yPercent: -100, opacity: 1 }, "same");
       }
     }, boxRef);
@@ -62,9 +62,9 @@ function HomeServices() {
         title="What We Do"
         styles="text-black bg-white rounded-[6px] border-none"
       />
-
+      {/* [&>*:nth-child(2)]:translate-x-full */}
       {/* Services */}
-      <section className="services_ flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-y-6 lg:gap-x w-[80%] mt-20 mx-auto [&>*:nth-child(2)]:translate-x-full">
+      <section className="services_ flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-y-6 lg:gap-x w-[80%] mt-20 mx-auto ">
         {serviceData.map(
           (data: { title: string; description: string }, index: number) => (
             <ContainerServices

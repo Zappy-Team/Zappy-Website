@@ -1,18 +1,18 @@
 .sidebar-indicator-container{
     position: absolute;
     top: 50%;
-    left: 90%;
-    transform: translate(-50%, -50%);
+    left: 95%;
     rotate: 180deg;
     transform: translate(-50%, -50%);
     transform: rotate(90deg);
     color: black;
+    font-weight: bold;
 }
 
 .hover-text{
     position: absolute;
     top: 50%;
-    transform: translate(-50%, -300%);
+    transform: translate(-50%, -250%);
     width: max-content;
     font-size: larger;
 }

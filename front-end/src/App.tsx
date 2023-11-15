@@ -23,7 +23,7 @@ const clientRoute = createBrowserRouter(
       <Route path="/contact" element={<Contact />} />
       <Route path="/events" element={<Events />} />
       <Route path="/blogs" element={<Blogs />} />
-      <Route path="/careers" element={<Careers />} />
+      <Route path="/career" element={<Careers />} />
       <Route path="/projects" element={<ProjectPage />} />
     </Route>
   )

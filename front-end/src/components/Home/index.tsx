@@ -15,7 +15,7 @@ const Home = () => {
           bgColor ? "bg-black" : "bg-white"
         } mt-16 pb-40 text-center duration-500`}
       >
-        <section className="flex justify-center  w-[100dvw] mb-12">
+        <section className="flex justify-center  md:w-[100dvw] mb-12 overflow-hidden w-full">
           <Canvas width={400} height={400} />
         </section>
         <SwipingText />

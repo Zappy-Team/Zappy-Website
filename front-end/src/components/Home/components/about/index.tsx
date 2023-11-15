@@ -92,7 +92,7 @@ const HomeAbout = () => {
       aboutZappySlide.to(".about_zappy_slide_bg", {
         opacity: 1,
         width: `${windowWidth < 1024 ? "100%" : "50%"}`,
-        height: "600px",
+        height: `${windowWidth < 1024 ? "auto" : "600px"}`,
         borderRadius: 0,
       });
       aboutZappySlide.to(

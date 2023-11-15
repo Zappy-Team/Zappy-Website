@@ -3,6 +3,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Link } from "react-router-dom";
 import useFooterBgColorStore from "../../store/footer/bg";
+import emailjs from "@emailjs/browser";
+import { useForm } from "react-hook-form";
+
+type FormData = {
+  email: string;
+};
 
 function Footer() {
   const boxRef = useRef<HTMLHeadingElement | null>(null);
@@ -29,8 +35,31 @@ function Footer() {
       //   headingTitle.to(".heading_title ", { yPercent: 100, opacity: 1 });
     }, boxRef);
     return () => ctx.revert();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  /* Send Email */
+  const { register, handleSubmit, reset } = useForm<FormData>();
+
+  const submitHandler = handleSubmit((data) => {
+    emailjs
+      .send(
+        "service_ua9l19i",
+        "template_xqwapev",
+        { email: data.email, subject: "Subscription" },
+        "aHefCKRxgW_roS3Li"
+      )
+      .then(
+        function () {
+          // setStatusOk("S U C C E S S !");
+          reset();
+        },
+        function (error) {
+          // setStatusBad("FAILED. Please try again.");
+          console.log(error);
+        }
+      );
+  });
 
   return (
     <section
@@ -63,15 +92,19 @@ function Footer() {
       >
         or
       </span>
-      <input
-        type="text"
-        placeholder="Subscribe now!"
-        className={`${
-          hovered || focused ? "bg-black" : "bg-white "
-        } duration-500  outline-none w-[80%] h-10 max-w-[500px] p-3 rounded-lg text-white`}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
-      />
+      <form onSubmit={submitHandler} className="w-[80%] max-w-[500px]">
+        <input
+          type="email"
+          placeholder="Subscribe now!"
+          className={`${
+            hovered || focused ? "bg-black" : "bg-white "
+          } duration-500  outline-none w-full p-3 rounded-lg text-white`}
+          onFocus={() => setFocused(true)}
+          {...register("email", {
+            onBlur: () => setFocused(false),
+          })}
+        />
+      </form>
       {/* Partnership */}
     </section>
   );

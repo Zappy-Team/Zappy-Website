@@ -10,8 +10,8 @@ const SidebarIndicator = () => {
     }, 10000);
   }, [arrowRef]);
   return (
-    <div ref={arrowRef} className="sidebar-indicator-container">
-      <small className="hover-text">HOVER ME</small>
+    <div ref={arrowRef} className="sidebar-indicator-container hidden md:block">
+      <small className="hover-text">HOVER THE EDGE</small>
       <div className="arrow">
         <span></span>
         <span></span>
