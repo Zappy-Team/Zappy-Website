@@ -47,6 +47,7 @@ function HomeServices() {
       }
     }, boxRef);
     return () => ctx.revert();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -65,15 +66,9 @@ function HomeServices() {
       {/* Services */}
       <section className="services_ flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-y-6 lg:gap-x w-[80%] mt-20 mx-auto [&>*:nth-child(2)]:translate-x-full">
         {serviceData.map(
-          ({
-            data,
-            index,
-          }: {
-            data: { id: string; title: string; description: string };
-            index: number;
-          }) => (
+          (data: { title: string; description: string }, index: number) => (
             <ContainerServices
-              key={data.id}
+              key={index}
               styles={` service_${index + 1} lg:col-span-${
                 index === 2 ? "12" : "1"
               } ${index === 1 && "lg:ml-5"}`}
