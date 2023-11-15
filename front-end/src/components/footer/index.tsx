@@ -30,6 +30,7 @@ function Footer() {
       //   headingTitle.to(".heading_title ", { yPercent: 100, opacity: 1 });
     }, boxRef);
     return () => ctx.revert();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
