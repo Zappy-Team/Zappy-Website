@@ -1,5 +1,11 @@
+import UnderConstruction from "../../components/UnderConstruction";
+
 function ProjectPage() {
-  return <></>;
+  return (
+    <>
+      <UnderConstruction />
+    </>
+  );
 }
 
 export default ProjectPage;

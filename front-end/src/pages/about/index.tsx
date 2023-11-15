@@ -1,18 +1,17 @@
-import ZappyAnimation from "../../components/zappy";
 import AboutHero from "./components/hero";
 import OurTeam from "./components/team";
 
 function AboutPage() {
-	return (
-		<>
-			<AboutHero />
+  return (
+    <>
+      <AboutHero />
 
-			{/* Zappy Component */}
-			{/* <ZappyAnimation /> */}
+      {/* Zappy Component */}
+      {/* <ZappyAnimation /> */}
 
-			<OurTeam />
-		</>
-	);
+      <OurTeam />
+    </>
+  );
 }
 
 export default AboutPage;

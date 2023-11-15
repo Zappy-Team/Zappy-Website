@@ -5,31 +5,14 @@ import { ScrollTrigger } from "gsap/all";
 import ContainerServices from "../../../containers/services";
 import useHomeBgStore from "../../../../store/home/bg";
 import BgWhite from "../../../background/white";
-
-const serviceData = [
-  {
-    id: 1,
-    title: "Web",
-    description:
-      "Zappy has design and built next-level websites for everyone from Indie  Studios, to Game Publishers, to the biggest AAA studios in the world.Zappy has design and built next-level websites for everyone from Indie  Studios, to Game Publishers, to the biggest AAA studios in the world.Zappy has design and built next-level websites for everyone from Indie  Studios, to Game Publishers, to the biggest AAA studios in the world.",
-  },
-  {
-    id: 2,
-    title: "Mob",
-    description:
-      "Zappy has design and built next-level websites for everyone from Indie  Studios, to Game Publishers, to the biggest AAA studios in the world.Zappy has design and built next-level websites for everyone from Indie  Studios, to Game Publishers, to the biggest AAA studios in the world.Zappy has design and built next-level websites for everyone from Indie  Studios, to Game Publishers, to the biggest AAA studios in the world.",
-  },
-  {
-    id: 3,
-    title: "Fix",
-    description:
-      "Zappy has design and built next-level websites for everyone from Indie  Studios, to Game Publishers, to the biggest AAA studios in the world.Zappy has design and built next-level websites for everyone from Indie  Studios, to Game Publishers, to the biggest AAA studios in the world.Zappy has design and built next-level websites for everyone from Indie  Studios, to Game Publishers, to the biggest AAA studios in the world.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 function HomeServices() {
   /* States */
   const { bgColor } = useHomeBgStore((state) => state);
+  const [t] = useTranslation();
+
+  const serviceData = t("global.home.whatWeDo", { returnObjects: true });
 
   const boxRef = useRef<HTMLHeadingElement | null>(null);
 
@@ -45,7 +28,10 @@ function HomeServices() {
             toggleActions: "restart pause complete reverse",
           },
         });
-        headingTitle.to(".heading_title ", { yPercent: 100, opacity: 1 });
+        headingTitle.to(".heading_title ", {
+          yPercent: 100,
+          opacity: 1,
+        });
 
         const serviceTitle = gsap.timeline({
           scrollTrigger: {
@@ -78,15 +64,23 @@ function HomeServices() {
 
       {/* Services */}
       <section className="services_ flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-y-6 lg:gap-x w-[80%] mt-20 mx-auto [&>*:nth-child(2)]:translate-x-full">
-        {serviceData.map((data, index) => (
-          <ContainerServices
-            key={data.id}
-            styles={` service_${index + 1} lg:col-span-${
-              index === 2 ? "12" : "1"
-            } ${index === 1 && "lg:ml-5"}`}
-            data={data}
-          />
-        ))}
+        {serviceData.map(
+          ({
+            data,
+            index,
+          }: {
+            data: { id: string; title: string; description: string };
+            index: number;
+          }) => (
+            <ContainerServices
+              key={data.id}
+              styles={` service_${index + 1} lg:col-span-${
+                index === 2 ? "12" : "1"
+              } ${index === 1 && "lg:ml-5"}`}
+              data={data}
+            />
+          )
+        )}
       </section>
     </section>
   );

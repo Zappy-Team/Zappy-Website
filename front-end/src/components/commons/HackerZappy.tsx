@@ -7,7 +7,7 @@ type Props = {
 const HackerZappy: React.FC<Props> = ({ text, intervalTime }) => {
   const textRef = useRef<null | HTMLHeadingElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_t, i18n] = useTranslation();
+  const [_t, _i18n] = useTranslation();
   const letters = "ABCDEFGHIGKLMOPQRSTUVWXYZ";
   useEffect(() => {
     let iterations = 0;

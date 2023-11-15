@@ -1,13 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {
-      colors: {
-        black: "#000",
-        white: "#fff",
-      },
-    },
-  },
-  plugins: [],
+	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+	theme: {
+		fontFamily: {
+			spaceMono: "'Space Mono', monospace",
+		},
+		extend: {
+			colors: {
+				black: "#000",
+				white: "#fff",
+			},
+		},
+	},
+	plugins: [],
 };

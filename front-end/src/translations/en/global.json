@@ -6,17 +6,55 @@
 		},
 		"about": {
 			"header": "Who we are",
-			"content": "Our commitment to excellence is woven into the fabric of our organization, driving us to deliver cutting-edge solutions that make a tangible impact. Whether it's leveraging the latest advancements or pioneering new paths, Zappy is your partner in navigating the digital frontier"
-		}
+			"general_content": "At Zappy, the pursuit of perfection is more than a goal - it's embedded in the very identity of our organization. The way we approach our work is a clear reflection of the perfection, sophistication and completeness that define our projects.",
+			"main_content": "We understand that each of our partners brings a distinct vision that requires a tailored approach. Recognizing the uniqueness of each project, we offer solutions designed to highlight what makes you special. Whether it's leveraging innovative technologies or blazing an entirely new path, our team is dedicated to ensuring the success of your project."
+		},
+		"whatWeDo": [
+			{
+				"id": 1,
+				"title": "Website Development",
+				"description":
+					"At your request, we will develop an engaging, fully functional, and robust web-based product tailored to your specific needs. At every stage of development, we place a strong emphasis on security, dedicated to protecting users' personal information and maintaining the integrity of the project's database at every turn."
+			},
+			{
+				"id": 2,
+				"title": "Mobile Development",
+				"description":
+					"We are committed to develop a fully functional and robust mobile application that is compatible with both iOS and Android devices. Our goal is to create a user-friendly application that meticulously addresses all of your needs and requirements."
+			},
+			{
+				"id": 3,
+				"title": "Continuous improvement",
+				"description":
+					"At Zappy, our services go beyond the initial implementation of a project. We understand the dynamic and ever-changing nature of the digital world, which is why we offer our clients ongoing technical maintenance for their existing products. This includes fixing bugs, implementing necessary changes, and enhancing new functionality. Our efforts are dedicated to ensuring that your products remain up-to-date and efficient."
+			}
+		]
 	},
 	"about": {
-		"company": {
-			"header": "We Are Zappy",
-			"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam facere quam itaque dicta assumenda laudantium, accusantium ex repudiandae commodi sunt, ea quidem incidunt voluptatum labore, suscipit ipsum? Eos quos tempore inventore at labore dolore dolor ratione id odio unde neque numquam autem facilis nulla blanditiis enim quaerat obcaecati, eum debitis?"
+
+		"about_us": {
+			"header": "We are Zappy",
+			"description": "The creation of Zappy is the result of the vision of two ambitious individuals whose combined knowledge, extensive experience in the field and passion for their work are the foundation for satisfying partner organizations and perfecting projects. At its core, Zappy aspires to be a development agency dedicated to realizing the visions of private companies and ensuring their success in both local and international markets."
 		},
 		"team": {
 			"header": "Team",
-			"description": "As we look ahead to the future, our startup team, led by co-founders Nick and George, envisions growth and expansion. We're a duo who's mindset is replete with curiosity, creative inspiration, and strategy. Together we hustle with passion, shaping the future of our venture with dedication, teamwork, and a collective drive to make a difference."
+			"description": "Our ambitious endeavor is shaped by the forward-thinking vision of our team members, Nika and Giorgi, who are committed to growth and progress. Our team values creativity and a results-oriented approach, which is evident in every project we undertake.",
+			"team_members": [
+				{
+					"id": 1,
+					"name": "Giorgi",
+					"title": "Co-Founder | Web-Developer",
+					"img": "https://i.ibb.co/JRHdf7y/Gio-Main-Team-Page.jpg",
+					"about": "From an early age, Giorgi showed a profound interest in exact sciences, particularly physics and mathematics. His ability to quickly master new concepts not only made him detail-oriented, but also enabled him to implement any given project with remarkable speed and precision, ensuring the achievement of desired results. Giorgi's first steps into programming began with the \"Hello World\" project, a pivotal experience where he discovered his true calling and decided to delve deeper into the field. Today, he stands as an accomplished professional, able to overcome any obstacles or challenges that come his way."
+				},
+				{
+					"id": 2,
+					"name": "Nick",
+					"title": "Co-Founder | Web-Developer",
+					"img": "https://i.ibb.co/Gs1MMY7/Nika-Main-Team-Page.png",
+					"about": "From a young age, Nika showed a keen interest in programming, driven by a desire to understand how modern technologies work. This curiosity not only led him to acquire a wide range of skills, but also to develop keen critical thinking abilities. His capacity to quickly analyze and overcome challenges became a key factor in establishing him as an accomplished professional in the rapidly evolving world of technology."
+				}
+			]
 		}
 	},
 	"contact": {
