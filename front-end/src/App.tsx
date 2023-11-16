@@ -16,15 +16,15 @@ import Blogs from "./pages/blogs";
 
 const clientRoute = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
+    <Route path="/*" element={<RootLayout />}>
       <Route index element={<HomePage />} />
-      <Route path="/services" element={<ServicesPage />} />
-      <Route path="/about-us" element={<AboutPage />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/events" element={<Events />} />
-      <Route path="/blogs" element={<Blogs />} />
-      <Route path="/career" element={<Careers />} />
-      <Route path="/projects" element={<ProjectPage />} />
+      <Route path="services" element={<ServicesPage />} />
+      <Route path="about-us" element={<AboutPage />} />
+      <Route path="contact" element={<Contact />} />
+      <Route path="events" element={<Events />} />
+      <Route path="blogs" element={<Blogs />} />
+      <Route path="career" element={<Careers />} />
+      <Route path="projects" element={<ProjectPage />} />
     </Route>
   )
 );
