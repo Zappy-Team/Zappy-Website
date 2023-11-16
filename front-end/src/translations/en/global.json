@@ -81,5 +81,10 @@
 				"content": "Content is required"
 			}
 		}
+	},
+	"services": {
+		"Ongoing Support": "A business's evolution is never complete. For this reason, most of our clients choose to take advantage of an ongoing partnership.",
+		"Project Based": "When the tasks at hand are short-term and the services required are well-defined, clients can work with us on a project-based partnership.",
+		"Consulting": "Whether clients require a one-time consultation or ongoing strategic support, our core objective is to partner for measurable success."
 	}
 }

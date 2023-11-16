@@ -109,7 +109,7 @@ const Sidebar: React.FC = () => {
 							bgColor
 								? "text-black fill-black"
 								: "text-white fill-white"
-						} h-[30px] -right-[100px] -translate-y-1/2 z-[10001] absolute md:block hidden`}
+						} h-[30px] -right-[100px] cursor-pointer -translate-y-1/2 z-[10001] absolute md:block hidden`}
 						icon={faBars}
 					/>
 					<FontAwesomeIcon

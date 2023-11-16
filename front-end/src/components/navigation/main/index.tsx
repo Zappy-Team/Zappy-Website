@@ -15,11 +15,11 @@ import useFooterBgColorStore from "../../../store/footer/bg";
 import { Link } from "react-router-dom";
 
 function NavigationMain() {
-  /* Store */
-  const { bgColor, setBgColor } = useHomeBgStore((state) => state);
-  const { footerBgColor, setFooterBgColor } = useFooterBgColorStore(
-    (state) => state
-  );
+	/* Store */
+	const { bgColor, setBgColor } = useHomeBgStore((state) => state);
+	const { footerBgColor, setFooterBgColor } = useFooterBgColorStore(
+		(state) => state
+	);
 
 	const [mouseHovered, setMouseHovered] = useState<boolean>(false);
 	const [pageHovered, setPageHovered] = useState<string | null>(null);
@@ -214,136 +214,146 @@ function NavigationMain() {
 		};
 	}, []);
 
-  return (
-    <nav
-      ref={boxRef}
-      className="w-[80px] h-[80px] fixed bottom-[40px] right-1/2 translate-x-1/2 flex justify-center items-center z-[300]"
-    >
-      <div
-        className={`${bgColor || footerBgColor ? "bg-white" : "bg-black"} ${
-          mouseHovered ? "opacity-100 scale-[1]" : "opacity-50 scale-[0.9]"
-        } duration-500 w-[50px] h-[50px] rounded-[50%]  bottom-1 cursor-pointer flex justify-center relative `}
-        onMouseEnter={handleMouseEnter}
-        onClick={() => setMouseHovered(true)}
-        // onMouseLeave={() => setMouseHovered(false)}
-        // ref={roundRef}
-      >
-        <small
-          className={`${scrollTop ? "block" : "hidden"} ${
-            mouseHovered ? "hidden" : ""
-          } absolute -top-10 -right-[1px] w-max  text-base font-semibold after:content-[''] after:w-2 after:h-2 after:absolute after:-bottom-2 after:translate-x-1/2 after:right-1/2 after:rotate-45 after:border-2 after:border-t-0 after:border-l-0 after:border-black opacity-100 pointer-events-none cursor-none `}
-          id="tap_"
-        >
-          Tap Me
-        </small>
+	return (
+		<nav
+			ref={boxRef}
+			className="w-[80px] h-[80px] fixed bottom-[40px] right-1/2 animate-pulse translate-x-1/2 flex justify-center items-center z-[300]"
+		>
+			<div
+				className={`${
+					bgColor || footerBgColor ? "bg-white" : "bg-black"
+				} ${
+					mouseHovered
+						? "opacity-100 scale-[1]"
+						: "opacity-80 scale-[0.9]"
+				} duration-500 w-[50px] h-[50px] rounded-[50%]  bottom-1 cursor-pointer flex justify-center relative `}
+				onMouseEnter={handleMouseEnter}
+				onClick={() => setMouseHovered(true)}
+				// onMouseLeave={() => setMouseHovered(false)}
+				// ref={roundRef}
+			>
+				<small
+					className={`${scrollTop ? "block" : "hidden"} ${
+						mouseHovered ? "hidden" : ""
+					} absolute -top-10 -right-[1px] w-max  text-base font-semibold after:content-[''] after:w-2 after:h-2 after:absolute after:-bottom-2 after:translate-x-1/2 after:right-1/2 after:rotate-45 after:border-2 after:border-t-0 after:border-l-0 after:border-black opacity-100 pointer-events-none cursor-none `}
+					id="tap_"
+				>
+					Tap Me
+				</small>
 
-        {/* <div className="w-[3px] h-[40px] bg-yellow-600 absolute right-1/2 translate-x-1/2 -top-[40px] before:content-[''] before:w-[10px] before:h-[10px] before:bg-green-900 before:absolute before:top-[0] flex justify-center"></div> */}
-      </div>
-      {/* {mouseHovered && ( */}
-      <>
-        <div
-          id="round-1"
-          className="w-[10px] h-[10px] bg-black rounded-[50%] absolute top-[15px] hidden"
-        ></div>
-        <div
-          id="round-2"
-          className="w-[10px] h-[10px] bg-black rounded-[50%] absolute -top-[15px] opacity-0 right-[50%] hidden"
-        ></div>
-        <div
-          id="round-3"
-          className="w-[10px] h-[10px] bg-black rounded-[50%] absolute -top-[15px] opacity-0 left-[50%] hidden"
-        ></div>
-        <div
-          ref={roundRef}
-          id="nav-container"
-          className="con w-[20px] h-[20px] absolute  hidden border border-black border-t-transparent border-l-transparent bg-white bg-opacity-50 rounded-full rotate-45"
-        >
-          {/* Hovered Name */}
-          {pageHovered && (
-            <div className="p-1 bg-black text-white font-semibold absolute -top-1/4 -left-1/3 -rotate-45">
-              {pageHovered}
-            </div>
-          )}
-          {/* Pages */}
-          <Link
-            to={"/"}
-            id="home_"
-            className="w-[30px] h-[30px] bg-black rounded-full absolute -top-[70px] -left-[90px] opacity-0 flex items-center justify-center text-white cursor-pointer "
-            onMouseEnter={() => setPageHovered("Home")}
-            onMouseLeave={() => setPageHovered(null)}
-            onClick={() => {
-              setBgColor(false);
-              setFooterBgColor(false);
-              setPageHovered(null);
-            }}
-          >
-            <FontAwesomeIcon icon={faHome} />
-          </Link>
+				{/* <div className="w-[3px] h-[40px] bg-yellow-600 absolute right-1/2 translate-x-1/2 -top-[40px] before:content-[''] before:w-[10px] before:h-[10px] before:bg-green-900 before:absolute before:top-[0] flex justify-center"></div> */}
+			</div>
+			{/* {mouseHovered && ( */}
+			<>
+				<div
+					id="round-1"
+					className="w-[10px] h-[10px] bg-black rounded-[50%] absolute top-[15px] hidden"
+				></div>
+				<div
+					id="round-2"
+					className="w-[10px] h-[10px] bg-black rounded-[50%] absolute -top-[15px] opacity-0 right-[50%] hidden"
+				></div>
+				<div
+					id="round-3"
+					className="w-[10px] h-[10px] bg-black rounded-[50%] absolute -top-[15px] opacity-0 left-[50%] hidden"
+				></div>
+				<div
+					ref={roundRef}
+					id="nav-container"
+					className="con w-[20px] h-[20px] absolute  hidden border border-black border-t-transparent border-l-transparent bg-white bg-opacity-50 rounded-full rotate-45"
+				>
+					{/* Hovered Name */}
+					{pageHovered && (
+						<div className="p-1 bg-black text-white font-semibold absolute -top-1/4 -left-1/3 -rotate-45">
+							{pageHovered}
+						</div>
+					)}
+					{/* Pages */}
+					<Link
+						to={"/"}
+						id="home_"
+						className="w-[30px] h-[30px] bg-black rounded-full absolute -top-[70px] -left-[90px] opacity-0 flex items-center justify-center text-white cursor-pointer "
+						onMouseEnter={() => setPageHovered("Home")}
+						onMouseLeave={() => setPageHovered(null)}
+						onClick={() => {
+							setBgColor(false);
+							setFooterBgColor(false);
+							setPageHovered(null);
+						}}
+					>
+						<FontAwesomeIcon icon={faHome} />
+					</Link>
 
-          <Link
-            to={"/services"}
-            id="services_"
-            className="w-[30px] h-[30px] bg-black rounded-full absolute -top-[70px] -left-[90px]  opacity-0 flex items-center justify-center text-white cursor-pointer"
-            onMouseEnter={() => setPageHovered("Services")}
-            onMouseLeave={() => setPageHovered(null)}
-            onClick={() => {
-              setBgColor(false);
-              setFooterBgColor(false);
-              setPageHovered(null);
-            }}
-          >
-            <FontAwesomeIcon icon={faServer} />
-          </Link>
-          {/* -left-[90px] -top-[50px] */}
-          <Link
-            to={"/projects"}
-            id="projects_"
-            className="w-[30px] h-[30px] bg-black text-white rounded-full absolute -top-[70px] -left-[90px]  opacity-0 flex items-center justify-center cursor-pointer"
-            onMouseEnter={() => setPageHovered("Projects")}
-            onMouseLeave={() => setPageHovered(null)}
-            onClick={() => {
-              setBgColor(false);
-              setFooterBgColor(false);
-              setPageHovered(null);
-            }}
-          >
-            <FontAwesomeIcon icon={faProjectDiagram} />
-          </Link>
-          {/* -left-[90px] -top-[60px] */}
-          <Link
-            to={"/about-us"}
-            id="about_"
-            className="w-[30px] h-[30px] bg-black text-white rounded-full absolute -top-[70px] -left-[90px]  opacity-0 flex items-center justify-center cursor-pointer"
-            onMouseEnter={() => setPageHovered("About")}
-            onMouseLeave={() => setPageHovered(null)}
-            onClick={() => {
-              setBgColor(false);
-              setFooterBgColor(false);
-              setPageHovered(null);
-            }}
-          >
-            <FontAwesomeIcon icon={faFaceLaugh} className="-rotate-45" />
-          </Link>
-          {/* -top-[60px] -left-[90px] */}
-          <Link
-            to={"/contact"}
-            id="contact_"
-            className="w-[30px] h-[30px] bg-black text-white rounded-full absolute -top-[70px] -left-[90px] opacity-0 flex items-center justify-center cursor-pointer"
-            onMouseEnter={() => setPageHovered("Contact")}
-            onMouseLeave={() => setPageHovered(null)}
-            onClick={() => {
-              setBgColor(false);
-              setFooterBgColor(false);
-              setMouseHovered(false);
-            }}
-          >
-            <FontAwesomeIcon className="-rotate-90" icon={faContactBook} />
-          </Link>
-        </div>
-      </>
-      {/* )} */}
-    </nav>
-  );
+					<Link
+						to={"/services"}
+						id="services_"
+						className="w-[30px] h-[30px] bg-black rounded-full absolute -top-[70px] -left-[90px]  opacity-0 flex items-center justify-center text-white cursor-pointer"
+						onMouseEnter={() => setPageHovered("Services")}
+						onMouseLeave={() => setPageHovered(null)}
+						onClick={() => {
+							setBgColor(false);
+							setFooterBgColor(false);
+							setPageHovered(null);
+						}}
+					>
+						<FontAwesomeIcon icon={faServer} />
+					</Link>
+					{/* -left-[90px] -top-[50px] */}
+					<Link
+						to={"/projects"}
+						id="projects_"
+						className="w-[30px] h-[30px] bg-black text-white rounded-full absolute -top-[70px] -left-[90px]  opacity-0 flex items-center justify-center cursor-pointer"
+						onMouseEnter={() => setPageHovered("Projects")}
+						onMouseLeave={() => setPageHovered(null)}
+						onClick={() => {
+							setBgColor(false);
+							setFooterBgColor(false);
+							setPageHovered(null);
+						}}
+					>
+						<FontAwesomeIcon icon={faProjectDiagram} />
+					</Link>
+					{/* -left-[90px] -top-[60px] */}
+					<Link
+						to={"/about-us"}
+						id="about_"
+						className="w-[30px] h-[30px] bg-black text-white rounded-full absolute -top-[70px] -left-[90px]  opacity-0 flex items-center justify-center cursor-pointer"
+						onMouseEnter={() => setPageHovered("About")}
+						onMouseLeave={() => setPageHovered(null)}
+						onClick={() => {
+							setBgColor(false);
+							setFooterBgColor(false);
+							setPageHovered(null);
+						}}
+					>
+						<FontAwesomeIcon
+							icon={faFaceLaugh}
+							className="-rotate-45"
+						/>
+					</Link>
+					{/* -top-[60px] -left-[90px] */}
+					<Link
+						to={"/contact"}
+						id="contact_"
+						className="w-[30px] h-[30px] bg-black text-white rounded-full absolute -top-[70px] -left-[90px] opacity-0 flex items-center justify-center cursor-pointer"
+						onMouseEnter={() => setPageHovered("Contact")}
+						onMouseLeave={() => setPageHovered(null)}
+						onClick={() => {
+							setBgColor(false);
+							setFooterBgColor(false);
+							setMouseHovered(false);
+						}}
+					>
+						<FontAwesomeIcon
+							className="-rotate-90"
+							icon={faContactBook}
+						/>
+					</Link>
+				</div>
+			</>
+			{/* )} */}
+		</nav>
+	);
 }
 
 export default NavigationMain;
