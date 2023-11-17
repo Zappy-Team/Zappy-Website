@@ -217,7 +217,7 @@ function NavigationMain() {
 	return (
 		<nav
 			ref={boxRef}
-			className="w-[80px] h-[80px] fixed bottom-[40px] right-1/2 animate-pulse translate-x-1/2 flex justify-center items-center z-[300]"
+			className="w-[80px] h-[80px] fixed bottom-[40px] right-1/2 translate-x-1/2 flex justify-center items-center z-[300]"
 		>
 			<div
 				className={`${
