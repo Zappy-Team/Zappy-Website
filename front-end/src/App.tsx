@@ -14,6 +14,7 @@ import Careers from "./pages/careers";
 import Events from "./pages/events";
 import Blogs from "./pages/blogs";
 import { inject } from "@vercel/analytics";
+import { useEffect } from "react";
 
 const clientRoute = createBrowserRouter(
   createRoutesFromElements(
@@ -31,7 +32,9 @@ const clientRoute = createBrowserRouter(
 );
 
 function App() {
-  inject();
+  useEffect(() => {
+    inject();
+  }, []);
   return <RouterProvider router={clientRoute} />;
 }
 
