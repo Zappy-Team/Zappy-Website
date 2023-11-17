@@ -13,6 +13,7 @@ import ProjectPage from "./pages/projects";
 import Careers from "./pages/careers";
 import Events from "./pages/events";
 import Blogs from "./pages/blogs";
+import { inject } from "@vercel/analytics";
 
 const clientRoute = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +31,7 @@ const clientRoute = createBrowserRouter(
 );
 
 function App() {
+  inject();
   return <RouterProvider router={clientRoute} />;
 }
 
