@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useFooterBgColorStore from "../../store/footer/bg";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
+import PopupComponent from "../popup/response";
 
 type FormData = {
   email: string;
@@ -14,6 +15,7 @@ function Footer() {
   const boxRef = useRef<HTMLHeadingElement | null>(null);
   const [hovered, setHovered] = useState<boolean>(false);
   const [focused, setFocused] = useState<boolean>(false);
+  const [statusOk, setStatusOk] = useState<string | null>(null);
 
   const { setFooterBgColor } = useFooterBgColorStore((state) => state);
 
@@ -51,11 +53,11 @@ function Footer() {
       )
       .then(
         function () {
-          // setStatusOk("S U C C E S S !");
+          setStatusOk("S U C C E S S !");
           reset();
         },
         function (error) {
-          // setStatusBad("FAILED. Please try again.");
+          setStatusOk("FAILED. Please try again.");
           console.log(error);
         }
       );
@@ -105,6 +107,10 @@ function Footer() {
           })}
         />
       </form>
+      {statusOk && (
+        <PopupComponent title={statusOk} close={() => setStatusOk(null)} />
+      )}
+
       {/* Partnership */}
     </section>
   );
