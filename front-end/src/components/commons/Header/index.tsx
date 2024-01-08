@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import useHomeBgStore from "../../../store/home/bg";
 import Cookie from "js-cookie";
 import HackerZappy from "../HackerZappy";
+import { useQueryClient } from "@tanstack/react-query";
 
 const Header: React.FC = () => {
   /* States */
@@ -78,12 +79,16 @@ const Header: React.FC = () => {
   );
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_t, i18n] = useTranslation();
+
+  const queryClient = useQueryClient();
+
   const handleLanguageChange = () => {
     if (Cookie.get("lang") === "en") {
       Cookie.set("lang", "ge");
     } else {
       Cookie.set("lang", "en");
     }
+    queryClient.invalidateQueries({ queryKey: ["teams"] });
     setLanguage(Cookie.get("lang") === "en");
     i18n.changeLanguage(!language ? "en" : "ge");
   };

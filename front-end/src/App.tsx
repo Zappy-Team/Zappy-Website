@@ -14,11 +14,12 @@ import Careers from "./pages/careers";
 import Events from "./pages/events";
 import Blogs from "./pages/blogs";
 import { inject } from "@vercel/analytics";
+import { getProjectsFeatureData } from "./API/project/get";
 
 const clientRoute = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/*" element={<RootLayout />}>
-      <Route index element={<HomePage />} />
+      <Route index element={<HomePage />} loader={getProjectsFeatureData} />
       <Route path="services" element={<ServicesPage />} />
       <Route path="about-us" element={<AboutPage />} />
       <Route path="contact" element={<Contact />} />

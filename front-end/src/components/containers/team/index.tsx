@@ -1,6 +1,8 @@
 import { useState } from "react";
+import defaultAvatar from "../../../assets/default/avatar.jpg";
+
 interface PropTypes {
-  img: string;
+  img?: string;
   name: string;
   title: string;
   about: string;
@@ -18,7 +20,7 @@ const TeamContainer: React.FC<PropTypes> = ({ img, name, title, about }) => {
   return (
     <div className="flex flex-col gap-4">
       <header className="rounded-xl overflow-hidden">
-        <img src={img} alt={name} />
+        <img src={img ? img : defaultAvatar} alt={name} />
       </header>
       <p className="text-center text-2xl">{name}</p>
       <span className="text-center text-xl font-bold">{title}</span>
